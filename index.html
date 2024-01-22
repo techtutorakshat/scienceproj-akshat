@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Saryu River Pollution Report</title>
+  <style>
+    /* General Styles */
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f2f2f2;
+    }
+
+    header {
+      background-color: #3498db;
+      color: #ecf0f1;
+      text-align: center;
+      padding: 1em;
+    }
+
+    nav {
+      background-color: #2980b9;
+      padding: 10px;
+      text-align: center;
+    }
+
+    nav a {
+      color: #ecf0f1;
+      text-decoration: none;
+      margin: 0 15px;
+      font-size: 16px;
+      font-weight: bold;
+      transition: color 0.3s ease-in-out;
+    }
+
+    nav a:hover {
+      color: #fff;
+    }
+
+    main {
+      max-width: 800px;
+      margin: 20px auto;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    }
+
+    section {
+      margin-bottom: 30px;
+    }
+
+    h2 {
+      color: #3498db;
+      border-bottom: 2px solid #3498db;
+      padding-bottom: 5px;
+      margin-bottom: 15px;
+    }
+
+    p {
+      color: #555;
+    }
+
+    ul {
+      color: #555;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 10px;
+      margin-top: 15px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      cursor: pointer;
+    }
+
+    .caption {
+      font-size: 14px;
+      color: #888;
+      text-align: center;
+      margin-top: 5px;
+    }
+
+    /* Slider Styles */
+    .slider {
+      overflow: hidden;
+      position: relative;
+      max-width: 100%;
+      margin: 20px 0;
+      border-radius: 10px;
+    }
+
+    .slider-content {
+      display: flex;
+      transition: transform 0.5s ease-in-out;
+    }
+
+    .slider img {
+      width: 100%;
+    }
+
+    .slider-controls {
+      position: absolute;
+      top: 50%;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      transform: translateY(-50%);
+    }
+
+    .slider-controls button {
+      background-color: #3498db;
+      color: #ecf0f1;
+      border: none;
+      padding: 10px;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease-in-out;
+    }
+
+    .slider-controls button:hover {
+      background-color: #2980b9;
+    }
+
+    /* Footer Styles */
+
+  footer {
+    background-color: #3498db;
+   color: #ecf0f1;
+    text-align: center;
+    padding: 10px;
+    /* Position properties for non-fixed footer: */
+   
+    width: 100%;                /* Span the full width of the parent container */
+      /* Additional adjustments: */
+    opacity: 1;                 /* Ensure footer is visible by default */
+    transition: opacity 0.3s ease-in-out; /* Maintain opacity transition */
+}
+
+body {
+      filter: grayscale(0); /* Add color to the entire page */
+}
+
+    section {
+      background-color: #ecf0f1; /* Light background color for sections */
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    ul {
+      list-style-type: none; /* Remove bullets from the list */
+      padding: 0;
+    }
+
+    li {
+      margin-bottom: 10px;
+    }
+
+    footer {
+      margin-top: 20px; /* Add space between content and footer */
+    }
+body {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #333; /* Dark text color for better readability */
+  }
+
+  header {
+    border-bottom: 2px solid #2980b9; /* Border separating header from content */
+  }
+
+  nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #3498db;
+    padding: 10px;
+  }
+
+  nav a {
+    font-size: 14px;
+  }
+
+  main {
+    box-sizing: border-box;
+  }
+
+  section h2 {
+    font-size: 24px;
+    margin-top: 0;
+  }
+
+  section p {
+    margin-bottom: 15px;
+  }
+
+  section ul {
+    margin-left: 20px;
+  }
+
+  img {
+    transition: transform 0.3s ease-in-out; /* Add smooth transition for images */
+  }
+
+  img:hover {
+    transform: scale(1.1); /* Zoom effect on image hover */
+  }
+
+  footer p {
+    margin: 0;
+  }
+  
+  /* ... (existing styles) ... */
+
+/* Picture Viewer Styles */
+/* ... (existing styles) ... */
+
+/* Picture Viewer Styles */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.9);
+}
+
+.modal img {
+  max-width: 80%;
+  max-height: 80%;
+}
+
+body {
+      font-size: 18px;
+      line-height: 1.6;
+      color: #333;
+    }
+
+    /* Header Styling */
+    header {
+      background-color: #3498db;
+      color: #ecf0f1;
+      text-align: center;
+      padding: 2em;
+      background-image: url('header-background.jpg');
+      background-size: cover;
+      background-position: center;
+    }
+
+    h1 {
+      font-size: 22px;
+      margin-bottom: 0.5em;
+    }
+
+    /* Navigation Bar Styling */
+    nav {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #3498db;
+      padding: 1em 0;
+    }
+
+    nav a {
+      font-size: 12px;
+      margin: 0 20px;
+      position: relative;
+      transition: color 0.3s ease-in-out;
+    }
+
+    nav a:before {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 2px;
+      bottom: -5px;
+      left: 0;
+      background-color: #ecf0f1;
+      transform: scaleX(0);
+      transform-origin: bottom right;
+      transition: transform 0.3s ease-in-out;
+    }
+
+    nav a:hover {
+      color: #fff;
+    }
+
+    nav a:hover:before {
+      transform: scaleX(1);
+      transform-origin: bottom left;
+    }
+
+    /* Main Content Styling */
+    main {
+      background: linear-gradient(to bottom, #fff, #ecf0f1);
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Section Styling */
+    section {
+      background-color: #ecf0f1;
+      padding: 30px;
+      margin-bottom: 40px;
+      border-radius: 15px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    h2 {
+      color: #3498db;
+      border-bottom: 2px solid #3498db;
+      padding-bottom: 10px;
+      margin-bottom: 20px;
+    }
+
+    /* Footer Styling */
+    footer {
+      background-color: #2980b9;
+      color: #ecf0f1;
+      text-align: center;
+      padding: 20px;
+      border-radius: 15px;
+      margin-top: 40px;
+    }
+
+    footer p {
+      margin: 0;
+      font-size: 14px;
+      color: white;
+    }
+
+    /* Slider Styling */
+    .slider {
+      border: 2px solid #3498db;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+      border-radius: 15px;
+      overflow: hidden;
+      position: relative;
+      max-width: 100%;
+      margin: 20px 0;
+    }
+
+    .slider-content {
+      display: flex;
+      transition: transform 0.5s ease-in-out;
+    }
+
+    .slider img {
+      width: 100%;
+      border-radius: 10px;
+    }
+
+    .slider-controls {
+      position: absolute;
+      top: 50%;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      transform: translateY(-50%);
+    }
+
+    .slider-controls button {
+      background-color: #3498db;
+      color: #ecf0f1;
+      border: none;
+      padding: 10px;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease-in-out;
+      font-size: 14px;
+    }
+
+    .slider-controls button:hover {
+      background-color: #2980b9;
+    }
+
+    .caption {
+      font-size: 15px;
+      color: #444;
+      text-align: center;
+      margin-top: 10px;
+    }
+
+    /* ... (existing styles) ... */
+
+  </style>
+  </style>
+</head>
+<body>
+  <header>
+    <h1 >Saryu River Pollution Report</h1>
+    <p>by Akshat Pandey</p>
+  </header>
+
+  <nav>
+    <a href="#about">About</a>
+    <a href="#survey">Survey Area</a>
+    <a href="#causes">Causes</a>
+    <a href="#effects">Effects</a>
+    <a href="#solutions">Solutions</a>
+  </nav>
+
+  <main>
+    <div class="slider">
+      <!-- Update the onclick attribute for your slider images -->
+<div class="slider-content">
+  <img src="image1.jpg" alt="River Image 1">
+  <img src="image2.jpg" alt="River Image 2">
+
+</div>
+
+      <div class="slider-controls">
+        <button onclick="prevSlide()">Previous</button>
+        <button onclick="nextSlide()">Next</button>
+      </div>
+    </div>
+
+    <section id="about">
+      <h2>About Water Pollution</h2>
+      <p>Water pollution is the contamination of water bodies, such as rivers, lakes, and oceans, with harmful substances. These substances can be chemical, physical, or biological. Water pollution can have a devastating impact on the environment and human health.</p>
+    </section>
+
+    <section id="survey">
+      <h2>Survey Area</h2>
+      <p>Name of Place: Saryu River</p>
+      <p>Source: Sarmool </p>
+      <p>Pollutants: Industrial waste, sewage, agricultural runoff, fertilizers, pesticides, and plastics</p>
+      <p>Type of Water Pollution: Medium Polluted</p>
+    </section>
+
+    <section id="causes">
+      <h2>Causes of Pollution</h2>
+      <p>Industrial waste: Untreated industrial waste dumped into the river contains harmful chemicals, such as heavy metals and toxins, which can poison aquatic life and make the water unsafe for human consumption.</p>
+      <p>Sewage: Untreated sewage from cities and towns along the riverbank contaminates the water with bacteria and viruses, which can cause waterborne diseases like cholera and typhoid.</p>
+      <p>Agricultural runoff: Fertilizers and pesticides used in agriculture can run off into the river, causing algal blooms and depleting oxygen levels in the water.</p>
+      <p>Plastics: Plastic waste is a major source of pollution in the Saryu River. Plastic bags, bottles, and other plastic debris can harm aquatic life and block waterways.</p>
+    </section>
+
+    <section id="effects">
+      <h2>Effects of Water Pollution</h2>
+      <p>Harm to aquatic life: Water pollution can kill fish and other aquatic life by poisoning them or depleting oxygen levels in the water.</p>
+      <p>Waterborne diseases: Polluted water can cause waterborne diseases like cholera, typhoid, and hepatitis in humans who drink or bathe in it.</p>
+      <p>Disruption of ecosystems: Water pollution can disrupt the delicate balance of ecosystems in rivers and lakes.</p>
+      <p>Economic impact: Water pollution can damage tourism and fishing industries, and it can also increase the cost of treating water for drinking and irrigation.</p>
+    </section>
+
+
+    <section id="solutions">
+      <h2>Solutions to Water Pollution</h2>
+      <ul>
+        <li>Reduce industrial waste: Industries should be required to treat their waste before releasing it into the river.</li>
+        <li>Treat sewage: All sewage should be treated before being released into the river.</li>
+        <li>Reduce agricultural runoff: Farmers should use sustainable agricultural practices to reduce the amount of fertilizer and pesticide runoff.</li>
+        <li>Clean up plastic waste: There is a need to clean up existing plastic waste from the river and to prevent new plastic pollution from entering the water.</li>
+        <li>Raise awareness: Public awareness campaigns can help to educate people about the importance of protecting our waterways from pollution.</li>
+        <li>Implement stricter regulations: Enforce regulations to prevent illegal dumping and ensure industries adhere to pollution control measures.</li>
+        <li>Promote eco-friendly practices: Encourage the use of eco-friendly products and technologies to minimize environmental impact.</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer id="footer">
+    <p>&copy; 2024 Saryu River Pollution Report <br> Developed by Akshat Pandey</p>
+    <a href="https://akshattechtutor.in/">Main Website</a>
+  </footer>
+  
+ <script>
+    let currentSlide = 0;
+    const totalSlides = document.querySelectorAll('.slider img').length;
+
+    function showSlide(index) {
+      const slider = document.querySelector('.slider-content');
+      const slideWidth = document.querySelector('.slider img').clientWidth;
+      currentSlide = index;
+      slider.style.transform = `translateX(${-currentSlide * slideWidth}px)`;
+    }
+
+    function nextSlide() {
+      currentSlide = (currentSlide + 1) % totalSlides;
+      showSlide(currentSlide);
+    }
+
+    function prevSlide() {
+      currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+      showSlide(currentSlide);
+    }
+
+    // Initial setup to show the first image
+    showSlide(currentSlide);
+    
+  </script>
+
+</body>
+</html>
